@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage })
 
-// Get Files function
+// Get Files middleware
 function getDirectoryContent (req, res, next) {
   fs.readdir('uploads', (err, files) => {
     if (err) return next(err)
@@ -57,6 +57,8 @@ app.post('/uploadmultiple', upload.array('myFiles', 12), (req, res, next) => {
 })
 
 app.get('/files', getDirectoryContent, (req, res) => {
+  // build a response using res.locals.filenames here.
+  // just sending the names is silly, and so for demonstration only
   res.send({ files: res.locals.filenames })
 })
 

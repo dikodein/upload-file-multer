@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8"/>
-    <title>Upload with Multerr</title>
+    <title>Upload with Multer</title>
   </head>
   <body>
 
@@ -16,6 +16,12 @@
     <form action="/uploadmultiple" enctype="multipart/form-data" method="POST">
       Select images: <input type="file" name="myFiles" multiple />
       <input type="submit" value="Upload files"/>
+    </form>
+
+    <!-- Photo -->
+    <form action="/uploadphoto" enctype="multipart/form-data" method="POST">
+      <input type="file" name="picture" accept="image/*" />
+      <input type="submit" value="Upload Photo" />
     </form>
   </body>
 </html>
